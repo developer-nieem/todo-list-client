@@ -16,7 +16,7 @@ const UpdateNote = () => {
     console.log(newStatus);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/todo-list')
+        fetch('https://todo-list-server-lime.vercel.app')
         .then(res => res.json())
         .then(data => {
             const singleNote = data.find(item => item._id === id);
@@ -42,7 +42,7 @@ const UpdateNote = () => {
         };
        
     
-        const res = fetch(`http://localhost:3000/todo-list/${id}`, {
+        const res = fetch(`https://todo-list-server-lime.vercel.app/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -97,9 +97,9 @@ const UpdateNote = () => {
          <input 
           onChange={(e) => setNewStatus(e.target.value)}
           type="radio"
-          value="running"
+          value="Running"
           name="status"
-          checked={newStatus == "running" ? 'checked' : ''}
+          checked={newStatus == "Running" ? 'checked' : ''}
         />
         <span className="mx-1">Running</span>
           </label>
@@ -121,7 +121,7 @@ const UpdateNote = () => {
         </div>
         <div className="text-center">
           <button className="bg-black p-3 rounded-sm text-white hover:bg-slate-600 ">
-            Add To List
+           Update Note
           </button>
         </div>
       </form>
