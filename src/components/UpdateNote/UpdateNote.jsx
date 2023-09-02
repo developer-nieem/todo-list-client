@@ -16,7 +16,7 @@ const UpdateNote = () => {
     console.log(newStatus);
 
     useEffect(()=>{
-        fetch('https://todo-list-server-lime.vercel.app')
+        fetch('https://todo-list-server-lime.vercel.app/todo-list')
         .then(res => res.json())
         .then(data => {
             const singleNote = data.find(item => item._id === id);
@@ -42,7 +42,7 @@ const UpdateNote = () => {
         };
        
     
-        const res = fetch(`https://todo-list-server-lime.vercel.app/${id}`, {
+        const res = fetch(`https://todo-list-server-lime.vercel.app/todo-list/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

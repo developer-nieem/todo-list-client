@@ -17,7 +17,7 @@ const AddNote = () => {
     };
    
 
-    const res = fetch("https://todo-list-server-lime.vercel.app", {
+    const res = fetch("https://todo-list-server-lime.vercel.app/todo-list", {
       method: "POST",
       headers: {
         "content-type": "application/json",

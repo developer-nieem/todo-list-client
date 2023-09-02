@@ -10,7 +10,7 @@ const DeleteNote = ({id , updateAfterDelete}) => {
     const handleDelete = () => {
         console.log(id);
 
-        fetch(`https://todo-list-server-lime.vercel.app/${id}`, {
+        fetch(`https://todo-list-server-lime.vercel.app/todo-list/${id}`, {
             method:"DELETE"
         })
         .then(res=> res.json())
