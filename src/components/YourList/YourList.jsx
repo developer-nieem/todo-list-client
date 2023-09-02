@@ -16,7 +16,7 @@ const YourList = () => {
     return (
         <div>
             {
-                lists.map(item=> <div key={item._id} className=' border p-3 my-3 flex justify-between items-start'>
+                lists.map(item=> <div key={item._id} className=' shadow-md rounded-sm border p-5 my-3 flex justify-between items-start'>
                    
                    <div className='space-y-2'>
                    <h2 className='text-4xl font-semibold'>{item.title}</h2>

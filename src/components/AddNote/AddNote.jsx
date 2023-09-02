@@ -58,12 +58,24 @@ const AddNote = () => {
             required
           ></textarea>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-3 items-center">
           <h2 className="font-semibold">Work Status : </h2>
-          <label>
-            <input type="checkbox" value="running" name="status" required />
-            <span>Running</span>
+
+         <div className="space-y-2">
+         <div>
+         <label >
+            <input type="radio" value="Running" name="status" required />
+            <span className="mx-1">Running</span>
           </label>
+         </div>
+
+          <div>
+          <label>
+            <input type="radio" value="Complete" name="status" required />
+            <span className="mx-1">Complete</span>
+          </label>
+          </div>
+         </div>
         </div>
         <div className="text-center">
           <button className="bg-black p-3 rounded-sm text-white hover:bg-slate-600 ">

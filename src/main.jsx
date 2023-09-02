@@ -6,6 +6,7 @@ import {  RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Main from './layout/Main.jsx'
 import YourList from './components/YourList/YourList.jsx'
 import AddNote from './components/AddNote/AddNote.jsx'
+import UpdateNote from './components/UpdateNote/UpdateNote.jsx'
 
 
 const router =  createBrowserRouter([
@@ -20,6 +21,10 @@ const router =  createBrowserRouter([
       {
         path:'/add-note',
         element: <AddNote></AddNote>
+      },
+      {
+        path:'/update-note/:id',
+        element: <UpdateNote></UpdateNote>
       }
     ]
   }
