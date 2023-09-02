@@ -9,7 +9,10 @@ const YourList = () => {
   useEffect(() => {
     fetch("https://todo-list-server-lime.vercel.app/todo-list")
       .then((res) => res.json())
-      .then((data) => setLists(data));
+      .then((data) => {
+        setLists(data)
+        setActive(!active)
+    });
   }, [active]);
 
   const toggleReadMore = (index) => {
