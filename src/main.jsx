@@ -5,6 +5,7 @@ import './index.css'
 import {  RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Main from './layout/Main.jsx'
 import YourList from './components/YourList/YourList.jsx'
+import AddNote from './components/AddNote/AddNote.jsx'
 
 
 const router =  createBrowserRouter([
@@ -15,6 +16,10 @@ const router =  createBrowserRouter([
       {
         path:'/',
         element: <YourList></YourList>
+      },
+      {
+        path:'/add-note',
+        element: <AddNote></AddNote>
       }
     ]
   }
