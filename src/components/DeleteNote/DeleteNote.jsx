@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { HiTrash } from 'react-icons/hi';
 import Swal from 'sweetalert2';
 
-const DeleteNote = ({id , updateAfterDelete}) => {
+const DeleteNote = ({id , setActive}) => {
     
-  const setActive = updateAfterDelete
+  
 
    
     const handleDelete = () => {
@@ -22,7 +22,7 @@ const DeleteNote = ({id , updateAfterDelete}) => {
                     title: 'Saved Your Note',
                     timer: 1500
                   })
-                  setActive(!active)
+                  setActive(true)
             }
         })
     }

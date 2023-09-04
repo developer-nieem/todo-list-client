@@ -11,13 +11,13 @@ const YourList = () => {
       .then((res) => res.json())
       .then((data) => {
         setLists(data)
-        setActive(!active)
     });
   }, [active]);
 
   const toggleReadMore = (index) => {
     const updatedLists = [...lists];
     updatedLists[index].showFullText = !updatedLists[index].showFullText;
+  // Log the updatedLists to check if it's being modified correctly
     setLists(updatedLists);
   };
 
@@ -57,7 +57,7 @@ const YourList = () => {
               {" "}
               <HiPencilAlt></HiPencilAlt>{" "}
             </Link>
-            <DeleteNote id={item._id} updateAfterDelete={setActive}>
+            <DeleteNote id={item._id} setActive={setActive}>
               {" "}
             </DeleteNote>
           </div>
