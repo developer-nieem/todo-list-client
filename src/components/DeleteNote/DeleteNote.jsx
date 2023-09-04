@@ -22,7 +22,7 @@ const DeleteNote = ({id , setActive}) => {
                     title: 'Saved Your Note',
                     timer: 1500
                   })
-                  setActive(true)
+                  setActive(false)
             }
         })
     }

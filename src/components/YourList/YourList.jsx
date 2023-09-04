@@ -4,24 +4,23 @@ import { HiPencilAlt, HiTrash } from "react-icons/hi";
 import DeleteNote from "../DeleteNote/DeleteNote";
 
 const YourList = () => {
+  const [active, setActive] = useState(true);
   const [lists, setLists] = useState([]);
-  const [active, setActive] = useState(false);
+  const [showFullTexts, setShowFullTexts] = useState([]);
+
+
   useEffect(() => {
     fetch("https://todo-list-server-lime.vercel.app/todo-list")
       .then((res) => res.json())
       .then((data) => {
         setLists(data)
+        setShowFullTexts(new Array(data.length).fill(false));
+
     });
-  }, [active]);
+  }, [lists, active]);
 
-  const toggleReadMore = (index) => {
-    const updatedLists = [...lists];
-    updatedLists[index].showFullText = !updatedLists[index].showFullText;
-  // Log the updatedLists to check if it's being modified correctly
-    setLists(updatedLists);
-  };
 
-  console.log(lists);
+
   return (
     <div>
       {lists.map((item, index) => (
@@ -32,18 +31,7 @@ const YourList = () => {
           <div className="space-y-2">
             <h2 className="text-4xl font-semibold">{item.title}</h2>
             <p>
-              {" "}
-              {item.details.length > 200 && !item.showFullText
-                ? item.details.substring(0, 200) + "..."
-                : item.details}
-              {item.details.length > 200 && (
-                <button
-                  onClick={() => toggleReadMore(index)}
-                  className="text-blue-950 font-bold italic underline mx-2"
-                >
-                  {item.showFullText ? "Read Less" : "Read More"}
-                </button>
-              )}
+            {item.details}
             </p>
             <p>
               {" "}
